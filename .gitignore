@@ -1,0 +1,16 @@
+#build 
+build/
+*.ipk
+
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+#git-token
+.secrets
+
+#atlas-docker-materials 
+docker/*
+

@@ -1,0 +1,13 @@
+services:
+  atlas-dev:
+    build:
+      context: ./docker      
+      dockerfile: Dockerfile
+    image: atlas-dev:latest
+    container_name: atlas-dev
+    network_mode: host
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
