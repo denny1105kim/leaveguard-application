@@ -1,0 +1,8 @@
+{
+    "id": "com.atlas.app.leaveguard_main",
+    "type": "flutter",
+    "name": "leaveguard_main",
+    "description": "LeaveGuard wallpad application",
+    "entry": "leaveguard_main --bundle=./ --fullscreen -a com.atlas.app.leaveguard_main",
+    "version": "1.0.0"
+}
