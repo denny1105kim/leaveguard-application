@@ -37,7 +37,6 @@ final items = await repo.fetchChecklistItems(memberId: 1, situationId: 1);
 | `situation_rule` | 상황 추정 규칙 (요일·시간). 비어 있음 |
 | `items` | 트레이에서 객체탐지로 확인하는 물건 |
 | `member_checklist_items` | 사용자·상황별 챙길 물건 |
-| `weather_items` | 날씨 조건으로 안내만 하는 물건 (우산, 양산) |
 | `object_states` | 물건의 현재 상태. 물건당 한 행 |
 
 ## 얼굴 인식 연결

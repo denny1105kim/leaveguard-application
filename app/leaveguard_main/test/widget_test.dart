@@ -24,7 +24,6 @@ void main() {
     expect((await repo.fetchMembers()).length, 3);
     expect((await repo.fetchSituations()).length, 2);
     expect((await repo.fetchItems()).length, 2);
-    expect((await repo.fetchWeatherItems()).length, 2);
   });
 
   test('사용자를 추가한다', () async {

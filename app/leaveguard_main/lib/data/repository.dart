@@ -31,7 +31,6 @@ abstract class Repository {
     required int situationId,
   });
 
-  Future<List<WeatherItem>> fetchWeatherItems();
 }
 
 /// SQLite 구현.
@@ -125,17 +124,5 @@ class SqliteRepository implements Repository {
       [memberId, situationId],
     );
     return rows.map(Item.fromRow).toList();
-  }
-
-  @override
-  Future<List<WeatherItem>> fetchWeatherItems() async {
-    final rows = _db.select(
-      '''
-      SELECT id, display_name, precip_type, pop_min, sky_max, temp_max_min
-      FROM weather_items
-      ORDER BY id
-      ''',
-    );
-    return rows.map(WeatherItem.fromRow).toList();
   }
 }

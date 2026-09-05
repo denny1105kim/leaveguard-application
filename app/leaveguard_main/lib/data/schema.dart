@@ -58,19 +58,6 @@ CREATE TABLE IF NOT EXISTS member_checklist_items (
 );
 
 
--- 날씨 조건에 따라 안내하는 물건 (사용자 공통)
--- 객체탐지 대상이 아니라 알림으로만 안내한다
--- 조건 컬럼은 기상청 단기예보 항목. NULL이면 그 조건은 보지 않는다
-CREATE TABLE IF NOT EXISTS weather_items (
-    id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    display_name  TEXT    NOT NULL,
-    precip_type   INTEGER,
-    pop_min       INTEGER CHECK (pop_min BETWEEN 0 AND 100),
-    sky_max       INTEGER CHECK (sky_max BETWEEN 1 AND 4),
-    temp_max_min  INTEGER
-);
-
-
 -- 객체탐지가 확인한 물건의 현재 상태
 -- 물건당 한 행을 갱신한다
 CREATE TABLE IF NOT EXISTS object_states (
@@ -89,11 +76,6 @@ INSERT INTO situation (name) VALUES ('출근'), ('외출');
 INSERT INTO items (label, display_name) VALUES
     ('car_key', '차키'),
     ('wallet',  '지갑');
-
-INSERT INTO weather_items (display_name, precip_type, pop_min, sky_max, temp_max_min) VALUES
-    ('우산', NULL, 60,   NULL, NULL),
-    ('양산', NULL, NULL, 1,    30);
-
 INSERT INTO member_checklist_items (member_id, situation_id, item_id)
 SELECT m.id, s.id, i.id
 FROM members m, situation s, items i
